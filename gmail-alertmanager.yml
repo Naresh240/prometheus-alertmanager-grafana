@@ -1,0 +1,18 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname']
+  receiver: gmail-notifications
+  group_interval: 30s
+  repeat_interval: 30s
+receivers:
+  - name: 'gmail-notifications'
+    email_configs:
+    - to: kumar240.qis@gmail.com
+      from: kumar240.qis@gmail.com
+      smarthost: smtp.gmail.com:587
+      auth_username: "kumar240.qis@gmail.com"
+      auth_identity: "kumar240.qis@gmail.com"
+      auth_password: "Single@240"
+      send_resolved: true

@@ -1,0 +1,10 @@
+groups:
+- name: example
+  rules:
+  # Alert for any cluster that has average CPU idle < 50%
+  - alert: HighUsage
+    expr: avg(irate(node_cpu_seconds_total{mode="idle"}[1m]) * 100) < 20
+    for: 1m
+    annotations:
+      summary: "High usage on {{ $labels.instance }}"
+      description: "{{ $labels.instance }} has a average CPU idle (current value: {{ $value }}s)"
