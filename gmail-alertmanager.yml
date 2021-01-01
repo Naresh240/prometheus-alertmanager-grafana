@@ -14,5 +14,5 @@ receivers:
       smarthost: smtp.gmail.com:587
       auth_username: "kumar240.qis@gmail.com"
       auth_identity: "kumar240.qis@gmail.com"
-      auth_password: "Single@240"
+      auth_password: "password"
       send_resolved: true
